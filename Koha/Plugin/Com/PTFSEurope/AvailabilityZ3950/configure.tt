@@ -14,6 +14,7 @@
 
 
     <form id="ill_avail_configure" method="post">
+        [% INCLUDE 'csrf-token.inc' %]
         <h4>Available z39.50 targets</h4>
         <p>Select targets you wish you make available for availability searching</p>
         <input type="hidden" name="class" value="[% CLASS %]"/>
