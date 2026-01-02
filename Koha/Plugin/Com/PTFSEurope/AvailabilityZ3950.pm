@@ -17,14 +17,14 @@ use Digest::MD5 qw( md5_hex );
 use MIME::Base64 qw( decode_base64 );
 use URI::Escape qw ( uri_unescape );
 
-our $VERSION = "1.0.9";
+our $VERSION = "1.1.0";
 
 our $metadata = {
     name            => 'ILL availability - z39.50',
-    author          => 'Andrew Isherwood',
+    author          => 'Open Fifth',
     date_authored   => '2019-06-24',
-    date_updated    => '2023-05-10',
-    minimum_version => '22.11.00.000',
+    date_updated    => '2026-01-02',
+    minimum_version => '24.05.00.000',
     maximum_version => undef,
     version         => $VERSION,
     description     => 'This plugin provides ILL availability searching for z39.50 targets'
