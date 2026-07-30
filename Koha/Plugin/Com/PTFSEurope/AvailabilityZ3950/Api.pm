@@ -201,9 +201,11 @@ sub get_result_id {
     my $server_id = get_server_id($result, $servers);
     my $bib_field = $config->{"ill_avail_config_bibid_${server_id}"};
     if ($bib_field) {
-        my $bib_id = $result->{$bib_field};
+        my ( $tag, $subfield ) = split( /\$/, $bib_field );
+        my $bib_id = $result->{$tag};
         if ($bib_id) {
             $bib_id = ref $bib_id eq 'ARRAY' ? ${$bib_id}[0] : $bib_id;
+            $bib_id =~ s/^\[\Q$subfield\E\]// if $subfield;
             $bib_id=~s/^\s+|\s+$//g;
             $result->{source_record_id} = $bib_id;
         }
